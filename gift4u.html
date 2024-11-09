@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Gift Box</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gloria Hallelujah', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+        }
+
+        .gift-box {
+            cursor: pointer;
+            width: 50px;
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+
+        .tulip-container {
+            display: none;
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .tulip-container img {
+            width: 90%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        /* Heart and Butterfly Animation */
+        .heart, .butterfly {
+            position: absolute;
+            opacity: 0;
+            animation: float 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .heart {
+            color: #ff0066;
+            font-size: 24px;
+            animation-name: heartFloat;
+        }
+
+        .butterfly {
+            color: #ffbb00;
+            font-size: 20px;
+            animation-name: butterflyFloat;
+        }
+
+        /* Keyframes for animations */
+        @keyframes heartFloat {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+
+        @keyframes butterflyFloat {
+            0% { transform: translateY(0) translateX(-10px); opacity: 1; }
+            100% { transform: translateY(-120px) translateX(20px); opacity: 0; }
+        }
+
+        /* Mobile-Friendly Adjustments */
+        @media (max-width: 480px) {
+            .gift-box {
+                width: 40px;
+            }
+
+            .tulip-container img {
+                width: 95%;
+                max-width: 250px;
+            }
+
+            .heart, .butterfly {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Gift Box -->
+    <div onclick="revealTulip()" class="gift-box" id="giftBox">
+        <img src="./assets/image/flower/giftbox.jpg.jpg" alt="Gift Box">
+    </div>
+
+    <!-- Tulip Image and Animation Effects -->
+    <div class="tulip-container" id="tulipContainer">
+        <img src="./assets/image/flower/tulips.jpg.jpg" alt="Tulip Flower">
+        <!-- Multiple Animated Hearts and Butterflies -->
+        <span class="heart" style="left: 20px; animation-delay: 0s;">❤️</span>
+        <span class="heart" style="right: 20px; animation-delay: 0.5s;">❤️</span>
+        <span class="heart" style="left: 60px; animation-delay: 1s;">❤️</span>
+        <span class="heart" style="right: 60px; animation-delay: 1.5s;">❤️</span>
+        
+        <span class="butterfly" style="left: 30px; animation-delay: 0.2s;">🦋</span>
+        <span class="butterfly" style="right: 30px; animation-delay: 0.7s;">🦋</span>
+        <span class="butterfly" style="left: 80px; animation-delay: 1.2s;">🦋</span>
+        <span class="butterfly" style="right: 80px; animation-delay: 1.7s;">🦋</span>
+    </div>
+
+    <script>
+        function revealTulip() {
+            // Hide the gift box
+            const giftBox = document.getElementById('giftBox');
+            giftBox.style.display = 'none';
+
+            // Show the tulip container
+            const tulipContainer = document.getElementById('tulipContainer');
+            tulipContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

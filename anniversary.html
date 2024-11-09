@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Anniversary Celebration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gloria Hallelujah', cursive;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: auto;
+            position: relative;
+            background-color: #f3f4f6;
+        }
+
+        .wave-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 240, 152, 0.8), rgba(252, 202, 237, 0.8));
+            background-size: 400% 400%;
+            animation: waveAnimation 15s ease infinite;
+            z-index: 0;
+        }
+
+        @keyframes waveAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .text-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            width: 70%;
+            max-width: 350px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 4;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        /* Swipeable slider styling */
+        .slider-container {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            width: 90%;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+        }
+
+        .slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide img {
+            width: auto;
+            max-width: 100%;
+            max-height: 80vh; /* Adjust image size to fit viewport */
+            border-radius: 10px;
+        }
+
+        /* Reusable fade-in effect for specific elements */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            margin-bottom: 60px;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .youtube-link {
+            margin-top: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #ff0066;
+            font-weight: bold;
+            z-index: 4;
+        }
+
+        .youtube-link:hover {
+            text-decoration: underline;
+        }
+
+            /* Wrapper with additional margin to move link up */
+        .link-container {
+            margin-top: -50px; /* Adjust this value to move the link up */
+            position: relative;
+            z-index: 10; /* Ensure it stays above background */
+        }
+
+        .gift-link {
+            color: #ff0066;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .gift-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wave-background"></div>
+    
+    <!-- Text with fade-in effect -->
+    <div class="text-box fade-in">
+        <p>Welcome to Our 3-Month Anniversary Celebration!</p>
+    </div>
+
+    <!-- Swipeable image gallery without fade-in effect -->
+    <div class="slider-container">
+        <div class="slide"><img src="./assets/image/nene/IMG_9810.JPG" alt="IMG-9810" loading="lazy" /></div>
+        <div class="slide"><img src="./assets/image/nene/0F0ED1FD-BE22-4BC8-ADD2-292AD1EABFF6.JPG" alt="Image 3" loading="lazy" /></div>
+        <div class="slide"><img src="./assets/image/nene/438D53A1-3073-4695-B51F-B0064295ABA6.JPG" alt="Image 4" loading="lazy" /></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0275.jpg" alt="IMG-0215" loading="lazy" /></div>
+        <div class="slide"><img src="assets/image/nene/IMG_0045.jpg" alt="img5" loading="lazy" /></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0046.jpg" alt="img6" loading="lazy" /></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0098.jpg" alt="img7" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0275.jpg"alt="img8" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0215.jpg" alt="img9" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/712F2ACB-722B-4928-903E-59C50893D9F6.JPG" alt="img10" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/939FEEA0-CA21-4D05-8FAA-7A560262AFD3.JPG" alt="img11" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0085.jpg" alt="img12" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0203.jpg" alt="img13" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0098.jpg" alt="img13" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_9805.jpg" alt="img13" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/DD96750F-3C76-4265-8ED4-2C9C688DD75B.JPG" alt="img13" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_9618.jpg" alt="img13" loading="lazy"/></div>
+
+    </div>
+
+    
+    <!-- Another fade-in text box -->
+    <div class="text-box fade-in">
+        <p>สวัสดีครับคุณเจ้าหญิงของเค้าทำเว็ปง่อยๆนี้ขึ้นมาให้นื่องจากวันครบรอบ3เดือนของเราเค้าไม่รู้จะให้อะไรแฟนเค้าเลยเนื่องจากเราไกลกันมากแต่เราก็ผ่านอะไรกันมาได้ตั้ง3เดือนแหนะเก่งกันมากๆเลยนะงับ</p>
+    </div>
+
+    <!-- YouTube Link with fade-in effect -->
+    <a href="https://youtu.be/rnVuY5DorlQ?si=g6GQx07n2j5PZEn2" target="_blank" class="youtube-link fade-in" id="youtubeLink">Click here to listen to our song on YouTube</a>
+
+    <!--Gift qoute-->
+    <div class="text-box fade-in">
+        <p>คุณเจ้าหญิงของเค้าเค้าขอบคุณเทอมากๆเบยนะครับที่เข้ามาในชีวิตเค้ามันเป็นอะไรที่ดีมากๆเลยเค้าไม่รุ้จะขอบคุณเทอยังไงดีเค้ามีของขวํญอยากจะให้เทอด้วยเทอลองเปิดดูนะครับเค้าให้เทอได้แค่นี้เยยตอนนี้เค้าขอโทษนะครับเทอ</p>
+    </div>
+    <div class="link-container">
+    <a href="./gift4u.html" class="gift-link">🎁 Click here for a special gift 🎁</a>
+    </div>
+    
+    <div class="text-box fade-in">
+        <p>ชอบของขวัญชินนี้ไหมเทอแฮะๆเค้าทำเองกัยมือเลยนะเค้าอยากให้เทอมากกว่านี้แต่เค้าให้เทอได้แค่นี้ง่ะตอนนี้แฮะๆวันที่เราได้เจอกันเค้าบอกเลยว่าเค้าจะทพให้เวลาของเทอ  worth it ที่สุดเลยนะครับ</p>
+    </div>
+
+    <!-- Button to reveal video -->
+<div class="text-box fade-in" id="videoButtonContainer" style="text-align: center; margin-top: 20px;">
+    <button onclick="showVideo()" style="padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background-color: #ff0066; color: white; cursor: pointer;">กดตรงนี้สิ้</button>
+</div>
+
+<!-- Hidden video container -->
+<div id="videoContainer" class="fade-in" style="display: none; margin-top: 20px; z-index: 5;">
+    <video width="560" height="315" controls preload="auto">
+        <source src="./assets/videos/nene2.0/a9134e74af7b497a82b92277db01962e.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="text-box fade-in">
+    <p>เค้าชอบคลิปนี้มากๆเทอดูสดใสมากๆเลยครับ</p>
+</div>
+<div class="text-box fade-in">
+    <p>Over all เค้ารักเนเน่นะครับเค้าทำเว็ปนี้ให้จากใจจริงเค้าให้เนเน่นะครับต้นโมกข์รักเนเน่นะครับบอกรักเราบ่อยๆน้าาา</p>
+</div>
+
+
+<script>
+    function showVideo() {
+        document.getElementById('videoContainer').style.display = 'block';
+        document.getElementById('videoButtonContainer').style.display = 'none';
+    }
+</script>
+
+
+    <script>
+        // Intersection Observer for fade-in effect on all elements with 'fade-in' class
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeInElements.forEach(element => observer.observe(element));
+    </script>
+
+    <script>
+        // Show a message after the video ends
+        // Show a message after the video ends
+        const videoElement = document.querySelector('#videoContainer video');
+            videoElement.addEventListener('ended', () => {
+        const message = document.createElement('div');
+            message.classList.add('text-box', 'fade-in');
+            message.style.marginTop = '20px';
+            message.textContent = 'ขอบคุณที่รับชม! หวังว่าเทอจะชอบนะครับ';
+            document.body.appendChild(message);
+        });
+
+
+    </script>
+</body>
+</html>
