@@ -48,7 +48,17 @@
             z-index: 4;
             margin-bottom: 15px;
             font-size: 1.2em;
+            border: 2px solid #ff0066;
+            animation: borderAnimation 3s infinite alternate;
         }
+
+
+
+        @keyframes borderAnimation {
+            0% { border-color: #ff0066; }
+            100% { border-color: #cc0055; }
+        }
+
 
         /* Swipeable slider styling */
         .slider-container {
@@ -126,10 +136,75 @@
         .gift-link:hover {
             text-decoration: underline;
         }
+
+         /* Add the responsive video CSS code here */
+         #videoContainer {
+            width: 100%;
+            max-width: 560px; /* Maintain a maximum width for larger screens */
+            margin: 0 auto;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+            position: relative;
+        }
+
+        #videoContainer video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Add hover effects to images and links */
+        .slide img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .youtube-link:hover {
+            text-decoration: underline;
+            color: #cc0055; /* Slightly darker shade */
+        }
+
+        .gift-link:hover {
+            text-decoration: underline;
+            color: #cc0055; /* Matching color change */
+        }
+        .floating-heart-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* So it doesn't block interaction */
+    overflow: hidden;
+}
+
+        .heart {
+            width: 20px;
+            height: 20px;
+            background-color: #ff69b4;
+            position: absolute;
+            top: 100%;
+            animation: floatUp 5s linear infinite;
+            clip-path: polygon(50% 0%, 61% 19%, 100% 34%, 75% 70%, 50% 100%, 25% 70%, 0% 34%, 39% 19%);
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
     </style>
 </head>
 <body>
     <div class="wave-background"></div>
+
+    <div class="floating-heart-container"></div>
     
     <!-- Text with fade-in effect -->
     <div class="text-box fade-in">
@@ -154,7 +229,13 @@
         <div class="slide"><img src="./assets/image/nene/IMG_0098.jpg" alt="img13" loading="lazy"/></div>
         <div class="slide"><img src="./assets/image/nene/IMG_9805.jpg" alt="img13" loading="lazy"/></div>
         <div class="slide"><img src="./assets/image/nene/DD96750F-3C76-4265-8ED4-2C9C688DD75B.JPG" alt="img13" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0954.jpg" alt="img13" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0951.jpg" alt="img13" loading="lazy"/></div>
+        <div class="slide"><img src="./assets/image/nene/IMG_0953.jpg" alt="img13" loading="lazy"/></div>
         <div class="slide"><img src="./assets/image/nene/IMG_9618.jpg" alt="img13" loading="lazy"/></div>
+
+
+
 
     </div>
 
@@ -176,7 +257,7 @@
     </div>
     
     <div class="text-box fade-in">
-        <p>ชอบของขวัญชินนี้ไหมเทอแฮะๆเค้าทำเองกัยมือเลยนะเค้าอยากให้เทอมากกว่านี้แต่เค้าให้เทอได้แค่นี้ง่ะตอนนี้แฮะๆวันที่เราได้เจอกันเค้าบอกเลยว่าเค้าจะทพให้เวลาของเทอ  worth it ที่สุดเลยนะครับ</p>
+        <p>ชอบของขวัญชินนี้ไหมเทอแฮะๆเค้าทำเองกัยมือเลยนะเค้าอยากให้เทอมากกว่านี้แต่เค้าให้เทอได้แค่นี้ง่ะตอนนี้แฮะๆวันที่เราได้เจอกันเค้าบอกเลยว่าเค้าจะทพให้เวลาของเทอ  worth it ที่สุดเลยนะครับ เราอาจจะมีทะเลาะกันมั้งบางครั้งเค้าขอโทษนะครับเทอเค้าบางครั้งก็ใช้คำพูดที่ไม่ดีกับเทอไปเค้าไม่ได้ตั้งใจให้มันเกิดขึ้นนะครับเรารักเทอมากๆละเราไม่เคยรักเทอน้อยลงเลยสักวันบางเรื่องที่เราทำมันดูน่ารำคาญเราขอโทษนะครับไอรักเนเน่นะครับละขอให้ยูเอนจิยกับของวัญที่เราให้ยูนะครับ</p>
     </div>
 
     <!-- Button to reveal video -->
@@ -238,6 +319,25 @@
         });
 
 
+    </script>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            document.querySelector('.floating-heart-container').appendChild(heart);
+        
+            // Randomize the starting position
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's'; // 3s to 6s duration
+        
+            // Remove the heart after the animation completes
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+            });
+        }
+        
+        // Create hearts at intervals
+        setInterval(createHeart, 500);
     </script>
 </body>
 </html>
